@@ -1,0 +1,24 @@
+# Structure: app.py and templates directory go in same directory
+# if in user home: ex /home/pi there is already a Templates folder with capital T, ignore and create a new directory with lowercase t
+# inside templates dirctory is your index.html file
+#  templates  (this is folder)
+#    index.html
+#  app.py
+
+# You will need to install Flask and gpizero
+# if using latest pi os, as of 9/6/2025
+# use: sudo apt install python3-flask
+# sudo apt install python3-gpio zero
+
+
+# to auto run everytime pi boots:
+# nano ~/.bashrc
+# add as last line 
+# Sudo Python3 /home/pathway/app.py  (home/pathway/app.py is substituted with your app.py location)
+# if on reboot it asks for password then:
+# go to root,
+# sudo visudo
+# add to last line:
+# pi ALL=(ALL) NOPASSWD: /usr/bin/python3 /home/pi/app.py   (home/pi/app.py is substituted with your app.py location)
+
+#save in place
