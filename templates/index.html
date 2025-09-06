@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPIO Relay Control</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; color: rgb(202, 149, 4); background-color: black; }
+        .button {
+            padding: 15px 30px; margin: 10px; font-size: 20px;
+            cursor: pointer; border-radius: 8px; border: none;
+        }
+        .on { background-color: #4CAF50; color: white; }
+        .off { background-color: #f44336; color: white; }
+        .pulse { background-color: #008CBA; color: white; }
+    </style>
+    <script>
+        function sendCommand(device, action) {
+            fetch('/control', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ device, action })
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Garage Control</h1>
+    <h2>Lights</h2>
+    <button class="button on" onclick="sendCommand('permanent', 'on')">Turn On</button>
+    <button class="button off" onclick="sendCommand('permanent', 'off')">Turn Off</button>
+
+    <h2>Garage Door</h2>
+    <button class="button pulse" onclick="sendCommand('momentary', 'pulse')">Pulse</button>
+</body>
+</html>
+
