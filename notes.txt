@@ -5,10 +5,10 @@
 #    index.html
 #  app.py
 
-# You will need to install Flask and gpizero
+# You will need to install Flask and RPi.GPIO
 # if using latest pi os, as of 9/6/2025
 # use: sudo apt install python3-flask
-# sudo apt install python3-gpio zero
+# sudo apt install python3-RPI.GPIO
 
 
 # to auto run everytime pi boots:
