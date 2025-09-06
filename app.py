@@ -34,8 +34,9 @@ def control():
             GPIO.output(PERMANENT_PIN, GPIO.HIGH) # Turn off
     elif device == 'momentary':
         if action == 'pulse':
-            # Pulse the relay for 500ms
+            # Pulse the relay for 1500ms
             GPIO.output(MOMENTARY_PIN, GPIO.LOW) # Turn on
+            # change to duration of pulse this is in seconds, 1.5 equals 1 1/2 seconds
             time.sleep(1.5) # Wait one and a half a second
             GPIO.output(MOMENTARY_PIN, GPIO.HIGH) # Turn off
 
